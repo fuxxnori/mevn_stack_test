@@ -19,7 +19,7 @@ let upload = multer({
 router.get("/",API.fetchAllPost);
 router.get("/:id",API.fetchPostById);
 router.post("/",upload,API.createPost);
-router.patch("/:id",API.updatePost);
+router.patch("/:id",upload,API.updatePost);
 router.delete("/:id",API.deletePost);
 
 module.exports = router;
